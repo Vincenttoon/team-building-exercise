@@ -1,5 +1,7 @@
+// require Engineer.js for testing purposes
 const Engineer = require('../lib/Engineer');
 
+// push engineer data using previous employee parameters
 describe('Engineer', () => {
     test('Should create an engineer instance', () => {
         const engineer = new Engineer (

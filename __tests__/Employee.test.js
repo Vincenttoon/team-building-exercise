@@ -1,5 +1,7 @@
+// require Employee.js for testing purposes
 const Employee = require('../lib/Employee');
 
+// basic employee template for all team members
 describe('Employee', () => {
     test('Should create an employee instance', () => {
         const employee = new Employee (

@@ -1,5 +1,7 @@
+// require Manager.js for testing purposes
 const Manager = require('../lib/Manager');
 
+// push manager data using previous employee parameters
 describe('Manager', () => {
     test('Should create a manager instance', () => {
         const manager = new Manager (
