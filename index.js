@@ -1,4 +1,6 @@
 // VINCE NOTE: Don't forget to add links that helped you learn in your readme!
+const {generateHtml} = require('./src/sample.js');
+const {writeFile} = require('./utils/writePage.js');
 
 // require job variables
 const Manager = require('./lib/Manager');
@@ -7,8 +9,6 @@ const Intern = require('./lib/Intern');
 
 // require inquirer
 const inquirer = require('inquirer');
-// require fs
-const fs = require('fs');
 
 // Empty team array for results
 const team = [];
@@ -116,6 +116,14 @@ function addTeamMembers() {
                     console.log(team)
                     break;
             }
+        })
+        // !!! Would push responses to sample.js, through functions !!!
+        .then((finalTeam) => {
+            return generateHtml(finalTeam);
+        })
+        // !!! Would take returned data from generateHtml, push through writePage code and produce final output !!!
+        .then((Html) => {
+            return writePage(Html);
         })
 }
 
@@ -266,8 +274,6 @@ function addIntern() {
         addTeamMembers()
     })
 }
-
-
 
 // function to start application
 init();
