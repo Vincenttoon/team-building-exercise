@@ -8,5 +8,18 @@ const inquirer = require('inquirer');
 // require fs
 const fs = require('fs');
 
+const init = () => {
+    console.log("It's time to build your team!");
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'managerName',
+                message: 'What is your managers name?'
+            }
+        ])
+}
 
+// function to start application
+init();
 
