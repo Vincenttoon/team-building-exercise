@@ -2,16 +2,16 @@ const generateTeam = (team) => {
   const generateManger = (manager) => {
     // !!! would create separate cards for Manager !!!
     return `
-        <div class="card-body col-4">
+        <div class="card-body col-sm-12 col-md-4">
             <div class="border border-warning">
-                <div class="card-header">
+                <div class="card-header bg-info text-white">
                     <h5 class="card-title">${manager.getName()}</h5>
                     <h6 class="card-subtitle"><i class="fab fa-black-tie"></i>  Manager</h6>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID Number: ${manager.getId()}</li>
+                    <li class="list-group-item">ID: ${manager.getId()}</li>
                     <li class="list-group-item">Email:<a href="${manager.getEmail()}"></a></li>
-                    <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
+                    <li class="list-group-item">Office #: ${manager.getOfficeNumber()}</li>
                 </ul>
             </div>
         </div>
@@ -21,14 +21,14 @@ const generateTeam = (team) => {
   const generateEngineer = (engineer) => {
     // !!! would create separate cards for Engineer !!!
     return `
-        <div class="card-body col-4">
+        <div class="card-body col-sm-12 col-md-4">
             <div class="border border-warning">
                 <div class="card-header">
-                    <h5 class="card-title">${engineer.getName()}</h5>
+                    <h5 class="card-title bg-info text-white">${engineer.getName()}</h5>
                     <h6 class="card-subtitle"><i class="fas fa-cogs"></i>  ${engineer.getRole()}</h6>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID Number: ${engineer.getId()}</li>
+                    <li class="list-group-item">ID: ${engineer.getId()}</li>
                     <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
                     <li class="list-group-item">Github: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
                 </ul>
@@ -41,14 +41,14 @@ const generateTeam = (team) => {
   const generateIntern = (intern) => {
     // !!! would create separate cards for Intern !!!
     return `
-      <div class="card-body col-4">
+      <div class="card-body col-sm-12 col-md-4">
           <div class="border border-warning">
               <div class="card-header">
-                  <h5 class="card-title">${intern.getName()}</h5>
+                  <h5 class="card-titl bg-info text-whitee">${intern.getName()}</h5>
                   <h6 class="card-subtitle"><i class="fas fa-graduation-cap"></i>  ${intern.getName()}</h6>
               </div>
               <ul class="list-group list-group-flush">
-                  <li class="list-group-item">ID Number: ${intern.getId()}</li>
+                  <li class="list-group-item">ID: ${intern.getId()}</li>
                   <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
                   <li class="list-group-item">School: ${intern.getSchool()}</li>
               </ul>
@@ -75,10 +75,10 @@ function generateHtml() {
     <title>Team Builder</title>
   </head>
 
-  <body>
+  <body style="background-color: grey;">
     <div class="row">
         <div class="bg-info col-12 jumbotron container text-center">
-            <h1 style="text-decoration:underline;">Your Professional Team:</h1>
+            <h1 class="text-white" style="text-decoration:underline;">Your Professional Team:</h1>
         </div>
     </div>
     <div class="container-fluid">
