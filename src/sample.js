@@ -90,7 +90,7 @@ const generateTeam = (team) => {
 
 
 // !!! Would generate the final HTML with the above parameters/cards included
-function generateHtml(cardArray) {
+function generateHtml(team) {
   return `
   <!DOCTYPE html>
     <html lang="en">

@@ -11,7 +11,7 @@ const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
 
 // Empty team array for results
-const team = [];
+const teamArray = [];
 
 const init = () => {
     console.log("It's time to build your team!");
@@ -85,7 +85,7 @@ const init = () => {
             // push class into empty array for later use
             team.push(manager);
             // call function for user to add more people
-            // DEVELOPER NOTE! I SHOULD HAVE THOUGHT OF THIS IN PROJECT 9
+            // DEVELOPER NOTE! I wih I would have discovered this in project 9
             addTeamMembers()
         })
     
