@@ -1,6 +1,5 @@
-// VINCE NOTE: Don't forget to add links that helped you learn in your readme!
+// require generateHtml function from sample.js
 const { generateHtml } = require("./src/sample.js");
-const { writeFile } = require("./utils/writePage.js");
 
 // require job variables
 const Manager = require("./lib/Manager");
