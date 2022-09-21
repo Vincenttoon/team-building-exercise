@@ -5,8 +5,8 @@ const generateTeam = (team) => {
     // !!! would create separate cards for Manager !!!
     return `
         <div class="card-body col-sm-12 col-md-4">
-            <div class="border border-warning">
-                <div class="card-header bg-info text-white">
+            <div style="border-style: solid; border-color:goldenrod; border-width: thick; box-shadow: 5px 5px 15px 5px #000000;">
+                <div class="card-header bg-info text-white"  style="box-shadow: 5px #000000;">
                     <h5 class="card-title">${manager.getName()}</h5>
                     <h6 class="card-subtitle"><i class="fab fa-black-tie"></i>  Manager</h6>
                 </div>
@@ -24,8 +24,8 @@ const generateTeam = (team) => {
     // !!! would create separate cards for Engineer !!!
     return `
         <div class="card-body col-sm-12 col-md-4">
-            <div class="border border-warning">
-                <div class="card-header bg-info text-white">
+            <div style="border-style: solid; border-color:goldenrod; border-width: thick; box-shadow: 5px 5px 15px 5px #000000;">
+                <div class="card-header bg-info text-white"  style="box-shadow: 5px #000000;">
                     <h5 class="card-title">${engineer.getName()}</h5>
                     <h6 class="card-subtitle"><i class="fas fa-cogs"></i>  ${engineer.getRole()}</h6>
                 </div>
@@ -44,8 +44,8 @@ const generateTeam = (team) => {
     // !!! would create separate cards for Intern !!!
     return `
       <div class="card-body col-sm-12 col-md-4">
-          <div class="border border-warning">
-              <div class="card-header bg-info text-white">
+        <div style="border-style: solid; border-color:goldenrod; border-width: thick; box-shadow: 5px 5px 15px 5px #000000;">
+            <div class="card-header bg-info text-white"  style="box-shadow: 5px #000000;">
                   <h5 class="card-title">${intern.getName()}</h5>
                   <h6 class="card-subtitle"><i class="fas fa-graduation-cap"></i>  ${intern.getRole()}</h6>
               </div>
@@ -107,7 +107,7 @@ function generateHtml(team) {
   <body style="background-color: grey;">
     <div class="row">
         <div class="bg-info col-12 jumbotron container text-center">
-            <h1 class="text-white" style="text-decoration:underline;">Your Professional Team:</h1>
+            <h1 class="text-white" style="text-decoration:underline; text-shadow: 2px 2px #000000;">Your Professional Team:</h1>
         </div>
     </div>
     <div class="container-fluid">

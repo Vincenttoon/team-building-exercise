@@ -10,7 +10,7 @@ const Intern = require("./lib/Intern");
 // require inquirer
 const inquirer = require("inquirer");
 // require fs
-const fs = require('fs');
+const fs = require("fs");
 
 // Empty team array for results
 const teamArray = [];
@@ -23,13 +23,12 @@ const init = () => {
         type: "input",
         name: "managerName",
         message: "What is your manager's name?",
-        // this needs rubular
+        // validate for input
         validate: (response) => {
-          if (response) {
+          if (response !== '') {
             return true;
           } else {
-            console.log("Please insert your manager's name!");
-            return false;
+            return "Please insert your manager's name!";
           }
         },
       },
@@ -37,13 +36,13 @@ const init = () => {
         type: "input",
         name: "managerId",
         message: "What is your manager's id number?",
-        // this needs rubular
+        // validate for number return
         validate: (response) => {
-          if (response) {
+            const check = response.match(/^[0-9]+$/)
+          if (check) {
             return true;
           } else {
-            console.log("Please insert your managers id number!");
-            return false;
+            return "Please insert a valid id number!";
           }
         },
       },
@@ -51,13 +50,13 @@ const init = () => {
         type: "input",
         name: "managerEmail",
         message: "What is your manager's email address?",
-        // this needs rubular
+        // validate for email address
         validate: (response) => {
-          if (response) {
+            const check = response.match(/^[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.]+.[a-zA-Z]+$/)
+          if (check) {
             return true;
           } else {
-            console.log("Please insert your managers id number!");
-            return false;
+            return "Please insert a valid email address!";
           }
         },
       },
@@ -65,13 +64,13 @@ const init = () => {
         type: "input",
         name: "managerOffice",
         message: "What is your manager's office phone number?",
-        // this needs rubular
+        // validate or valid 10 digit phone number
         validate: (response) => {
-          if (response) {
+            const check = response.match(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/)
+          if (check) {
             return true;
           } else {
-            console.log("Please insert your managers id number!");
-            return false;
+            return "Please insert a valid phone number!";
           }
         },
       },
@@ -130,13 +129,12 @@ const init = () => {
           type: "input",
           name: "engineerName",
           message: "What is your engineer's name?",
-          // this needs rubular
+        // check for valid name
           validate: (response) => {
-            if (response) {
+            if (response !== "") {
               return true;
             } else {
-              console.log("Please insert your engineer's name!");
-              return false;
+              return "Please insert your engineer's name!";
             }
           },
         },
@@ -144,13 +142,13 @@ const init = () => {
           type: "input",
           name: "engineerId",
           message: "What is your engineer's id number?",
-          // this needs rubular
+          // validate for number return
           validate: (response) => {
-            if (response) {
+            const check = response.match(/^[0-9]+$/)
+            if (check) {
               return true;
             } else {
-              console.log("Please insert your engineer's id number!");
-              return false;
+              return "Please insert a valid id number!";
             }
           },
         },
@@ -158,13 +156,13 @@ const init = () => {
           type: "input",
           name: "engineerEmail",
           message: "What is your engineer's email address?",
-          // this needs rubular
+          // validate for email address
           validate: (response) => {
-            if (response) {
+            const check = response.match(/^[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.]+.[a-zA-Z]+$/)
+            if (check) {
               return true;
             } else {
-              console.log("Please insert your engineer's id number!");
-              return false;
+              return "Please insert a valid email address!";
             }
           },
         },
@@ -172,13 +170,12 @@ const init = () => {
           type: "input",
           name: "engineerGithub",
           message: "What is your engineer's Github Username?",
-          // this needs rubular
+          // validate for input
           validate: (response) => {
-            if (response) {
+            if (response !== '') {
               return true;
             } else {
-              console.log("Please insert your engineer's id number!");
-              return false;
+              return "Please insert a valid Github username";
             }
           },
         },
@@ -204,9 +201,9 @@ const init = () => {
           type: "input",
           name: "internName",
           message: "What is your intern's name?",
-          // this needs rubular
+          // validate for input
           validate: (response) => {
-            if (response) {
+            if (response !== "") {
               return true;
             } else {
               console.log("Please insert your intern's name!");
@@ -218,12 +215,13 @@ const init = () => {
           type: "input",
           name: "internId",
           message: "What is your intern's id number?",
-          // this needs rubular
+          // validate for number return
           validate: (response) => {
-            if (response) {
+            const check = response.match(/^[0-9]+$/)
+            if (check) {
               return true;
             } else {
-              console.log("Please insert your intern's id number!");
+              console.log("Please insert a valid id number!");
               return false;
             }
           },
@@ -232,12 +230,13 @@ const init = () => {
           type: "input",
           name: "internEmail",
           message: "What is your intern's email address?",
-          // this needs rubular
+          // validate for email address
           validate: (response) => {
-            if (response) {
+            const check = response.match(/^[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.]+.[a-zA-Z]+$/)
+            if (check) {
               return true;
             } else {
-              console.log("Please insert your intern's id number!");
+              console.log("Please insert a valid email address!");
               return false;
             }
           },
@@ -245,13 +244,13 @@ const init = () => {
         {
           type: "input",
           name: "internSchool",
-          message: "What school is/did your intern attend?",
-          // this needs rubular
+          message: "What school does/did your intern attend?",
+          // validate for input
           validate: (response) => {
-            if (response) {
+            if (response !== "") {
               return true;
             } else {
-              console.log("Please insert your intern's id number!");
+              console.log("Please insert your intern's school name!");
               return false;
             }
           },
@@ -269,23 +268,24 @@ const init = () => {
         // call function for user to add more people
         addTeamMembers();
       });
-    }
-    function buildPage() {
-        return new Promise((resolve, reject) => {
-            fs.writeFile('./dist/index.html', generateHtml(teamArray), err => {
-                if (err) {
-                    reject(err);
-                    return;
-                }
-    
-                resolve({
-                    ok: true,
-                    message: 'Team Page Created!'
-                });
-            });
-        });
-    }
+  }
 
+//   writes page using the teamArray data into the generateHtml function from sample.js
+  function buildPage() {
+    return new Promise((resolve, reject) => {
+      fs.writeFile("./dist/index.html", generateHtml(teamArray), (err) => {
+        if (err) {
+          reject(err);
+          return "Something went wrong. Please try again later.";
+        }
+
+        resolve({
+          ok: true,
+          message: "Team Page Created!",
+        });
+      });
+    });
+  }
 };
 
 // function to start application
