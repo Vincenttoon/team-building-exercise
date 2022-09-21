@@ -12,7 +12,7 @@ const generateTeam = (team) => {
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${manager.getId()}</li>
-                    <li class="list-group-item">Email:<a href="${manager.getEmail()}"></a></li>
+                    <li class="list-group-item">Email:<a href="${manager.getEmail()}">${manager.getEmail()}</a></li>
                     <li class="list-group-item">Office #: ${manager.getOfficeNumber()}</li>
                 </ul>
             </div>
@@ -25,8 +25,8 @@ const generateTeam = (team) => {
     return `
         <div class="card-body col-sm-12 col-md-4">
             <div class="border border-warning">
-                <div class="card-header">
-                    <h5 class="card-title bg-info text-white">${engineer.getName()}</h5>
+                <div class="card-header bg-info text-white">
+                    <h5 class="card-title">${engineer.getName()}</h5>
                     <h6 class="card-subtitle"><i class="fas fa-cogs"></i>  ${engineer.getRole()}</h6>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -45,9 +45,9 @@ const generateTeam = (team) => {
     return `
       <div class="card-body col-sm-12 col-md-4">
           <div class="border border-warning">
-              <div class="card-header">
-                  <h5 class="card-title bg-info text-white">${intern.getName()}</h5>
-                  <h6 class="card-subtitle"><i class="fas fa-graduation-cap"></i>  ${intern.getName()}</h6>
+              <div class="card-header bg-info text-white">
+                  <h5 class="card-title">${intern.getName()}</h5>
+                  <h6 class="card-subtitle"><i class="fas fa-graduation-cap"></i>  ${intern.getRole()}</h6>
               </div>
               <ul class="list-group list-group-flush">
                   <li class="list-group-item">ID: ${intern.getId()}</li>
@@ -124,4 +124,4 @@ function generateHtml(team) {
 };
 
 // !!! export to use generateHtml for the writePage call? !!!
-module.exports = { generateTeam };
+module.exports = { generateHtml };

@@ -1,5 +1,5 @@
 // VINCE NOTE: Don't forget to add links that helped you learn in your readme!
-const { generateTeam } = require("./src/sample.js");
+const { generateHtml } = require("./src/sample.js");
 const { writeFile } = require("./utils/writePage.js");
 
 // require job variables
@@ -272,7 +272,7 @@ const init = () => {
     }
     function buildPage() {
         return new Promise((resolve, reject) => {
-            fs.writeFile('./dist/index.html', generateTeam(teamArray), err => {
+            fs.writeFile('./dist/index.html', generateHtml(teamArray), err => {
                 if (err) {
                     reject(err);
                     return;
