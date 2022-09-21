@@ -117,15 +117,7 @@ function addTeamMembers() {
                     break;
             }
         })
-        // !!! Would push responses to sample.js, through functions !!!
-        .then((finalTeam) => {
-            return generateHtml(finalTeam);
-        })
-        // !!! Would take returned data from generateHtml, push through writePage code and produce final output !!!
-        .then((Html) => {
-            return writePage(Html);
-        })
-}
+};
 
 function addEngineer() {
     inquirer

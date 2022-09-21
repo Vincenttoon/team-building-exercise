@@ -1,3 +1,5 @@
+const Employee = require("../lib/Employee");
+
 const generateTeam = (team) => {
   const generateManger = (manager) => {
     // !!! would create separate cards for Manager !!!
@@ -44,7 +46,7 @@ const generateTeam = (team) => {
       <div class="card-body col-sm-12 col-md-4">
           <div class="border border-warning">
               <div class="card-header">
-                  <h5 class="card-titl bg-info text-whitee">${intern.getName()}</h5>
+                  <h5 class="card-title bg-info text-white">${intern.getName()}</h5>
                   <h6 class="card-subtitle"><i class="fas fa-graduation-cap"></i>  ${intern.getName()}</h6>
               </div>
               <ul class="list-group list-group-flush">
@@ -56,12 +58,39 @@ const generateTeam = (team) => {
     </div>
       `;
   };
+
+//   empty array for user data results
+  const cardArray = [];
+
+//   joins managers through filter & map
+  cardArray.push(team
+    // filters home employee function to call out Manager declaration
+    .filter(employee => employee.getRole() === "Manager")
+    // maps manager declaration to only call managers to the generate manager function
+    .map(manager => generateManger(manager))
+  );
+//   joins engineers through filter & map
+  cardArray.push(team
+    // filters home employee function to call out Engineer declaration
+    .filter(employee => employee.getRole() === "Engineer")
+    // maps engineer declaration to only call engineer to the generate engineer function
+    .map(engineer => generateEngineer(engineer))
+  );
+
+//   joins interns through filter & map
+  cardArray.push(team
+        // filters home employee function to call out Intern declaration
+    .filter(employee => employee.getRole() === "Intern")
+    // maps intern declaration to only call intern to the generate intern function
+    .map(intern => generateIntern(intern))
+  );
+
+  return cardArray.join("");
 };
 
-// !!! Need to join workingTeam into one collective? Probably as workingTeam? !!!
 
 // !!! Would generate the final HTML with the above parameters/cards included
-function generateHtml() {
+function generateHtml(cardArray) {
   return `
   <!DOCTYPE html>
     <html lang="en">
