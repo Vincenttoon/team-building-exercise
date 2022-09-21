@@ -124,4 +124,4 @@ function generateHtml(team) {
 };
 
 // !!! export to use generateHtml for the writePage call? !!!
-module.exports = { generateHtml };
+module.exports = { generateTeam };
