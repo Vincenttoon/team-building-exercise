@@ -16,11 +16,13 @@ By: [Vincent Toon](https://github.com/vincenttoon)
 
 * [Installation](#installation)
 
+* [Tests](#tests)
+
 * [Usage](#usage)  
 
-* [Contributors](#contributors)
+* [Things I Learned](#things-i-learned)
 
-* [Tests](#tests)
+* [Contributors](#contributors)
 
 * [Questions?](#questions)
 
@@ -40,8 +42,8 @@ Download code from repo, run npm i
 
 * Download or copy this the code from this repo 
 * Install node (npm i) 
-* Insert your information through the questionnaire and enjoy your html team page!
-* Insert photos with brief descrip.
+* Insert your information through the questionnaire
+* Enjoy your HTML team page!
 
 ## Things I Learned
 
@@ -49,12 +51,16 @@ Download code from repo, run npm i
 
 ![Switch and Case Example](./images/switch-case.jpg)
 
-* Super usage in Classes through constructor:
+* Super usage in Classes through constructor: [Super Link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#super_class_calls_with_super)
 ![Super Link Example](./images/mirrored-examples.jpg)
-[Super Link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#super_class_calls_with_super)
 
-* Further Understanding of filter and map:
+* Further understanding and application of filter and map:
+
 ![Filter and Map Example](./images/filter-map.jpg)
+
+* Further understanding and application of regex:
+
+![Regex examples](./images/regex-validation.jpg)
 
 ## Contributors
 
